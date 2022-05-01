@@ -11,7 +11,7 @@
 
     
 
-    <title>آسا</title>
+    <title>راد </title>
 </head>
 
 <body>
@@ -121,6 +121,45 @@
     <script src="{{asset('asset/js/vendor/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('asset/js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('asset/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+   
+
+<script>
+  const labels = [
+    'فروردین',
+    'اردیبهشت',
+    'خرداد',
+    'تیر',
+    'مرداد',
+    'شهریور',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'آمار مشتریان',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
 
 
 

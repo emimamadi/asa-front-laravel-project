@@ -13,23 +13,23 @@
 <body>
 @include('layout.header')
     <div class="login-box">
-        <h2>Register</h2>
+        <h2>ثبت نام</h2>
         <form action="{{ route('register.store') }}" method="POST">
             @csrf
             <div class="user-box">
                 <input type="text" name="name" required="">
-                <label>Fullname</label>
+                <label>نام کامل</label>
             </div>
             <div class="user-box">
                 <input type="text" name="username" required="">
-                <label>Username</label>
+                <label>ایمیل</label>
             </div>
             <div class="user-box">
                 <input type="password" name="password" required="">
-                <label>Password</label>
+                <label>پسورد</label>
             </div>
             <button type="submit" class="btn btn-primary">
-             Submit</button>
+             ارسال</button>
         </form>
     </div>
 </body>

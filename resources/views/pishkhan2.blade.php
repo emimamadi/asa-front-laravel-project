@@ -37,7 +37,7 @@
         <a href="#" class="btn btn-primary w-50 mx-auto pt-2 mb-2">جزییات</a>
     </div>
 
-    
+
     <div class="card" style="width:18rem; text-align:center;border: 1px solid gray;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
         <h5 class="pt-2">فروش ها</h5>
@@ -45,7 +45,7 @@
         <a href="#" class="btn btn-primary w-50 mx-auto pt-2 mb-2">جزییات</a>
     </div>
 
-    
+
     <div class="card" style="width:18rem; text-align:center;border: 1px solid gray; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;">
         <h5 class="pt-2">چک ها </h5>
         <p class="pt-2">8</p>
@@ -80,37 +80,65 @@
 
 <h2 class="mx-auto">مشتریان</h2>
 
-<table class="table table-primary w-75 mx-auto pt-4 table-bordered ">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">نام</th>
-      <th scope="col">نام خانوادگی</th>
-      <th scope="col">عملیات</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+
+            <canvas id="myChart"></canvas>
+
+        </div>
+
+        <div class="col-md-6">
+
+
+            <table class="table table-primary w-100 mx-auto pt-4 table-bordered ">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">نام</th>
+                        <th scope="col">نام خانوادگی</th>
+                        <th scope="col">عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td colspan="2">Emi mamadi</td>
+                        <td><button class="btn-primary rounded">Edit</button> <button class="btn-danger rounded">Delete</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
 
 
 
 
-    @stop
+
+
+@stop
