@@ -6,29 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{asset('asset/css/login_style.css')}}">
     <title>ورود</title>
 </head>
 
 <body>
-@include('layout.header')
-    <div class="login-box">
-        <h2>ورود</h2>
-        <form action="{{route('login.store')}}" method="POST">
-            @csrf
-            <div class="user-box">
-                <input type="text" name="email" required="">
-                <label>ایمیل</label>
+    <div class="boxform">
+        <div class="total">
+            <img src="{{asset('asset/img/poni.jpg')}}" alt="">
+
+            <div class="logform">
+                <form action="" dir="rtl">
+                    <div class="row">
+                        <div class="col">
+                           
+                            <input type="text" class="form-control" name="email" id="email" placeholder="ایمیل">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                 
+                            <input type="text" class="form-control" name="password" id="password" placeholder="پسورد">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row text-center">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary w-100">ورود</button>
+                        </div>
+                    </div>
+
+                    <div class="row text-center pt-3 " dir="ltr">
+                        <div class="col">
+                            <h6><a href="{{route('register')}}" class="w-100">ثبت نام </a></h6>
+                            <h6><a href="{{route('home')}}" class="w-100"> <i class="fa fa-arrow-left" aria-hidden="true"></i> بازگشت به خانه </a></h6>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="user-box">
-                <input type="password" name="password" required="">
-                <label>پسورد</label>
-            </div>
-            <button type="submit" class="btn btn-primary">
-                ارسال
-            </button>
-        </form>
+        </div>
+
     </div>
+
 </body>
 
 </html>

@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Auth;
 
             <!-- <li><a href="">وضعیت</a></li> -->
 
+            <li><a href="{{route('user')}}">کاربر</a></li>
+
             <li><a href="">سایر موارد</a></li>
 
         </ul>

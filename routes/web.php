@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Home;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Status;
+use App\Http\Controllers\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
@@ -18,12 +20,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('register');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
+
+
+Route::get('/home',[Home::class,'index'])->name('home');
 
 Route::get('/dashboard',[Dashboard::class,'index'])->name('dashboard');
+
 
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 
@@ -37,6 +43,8 @@ Route::post('/login/store',[LoginController::class,'store'])->name('login.store'
 
 
 Route::get('/pishkhan2',[Status::class,'index'])->name('pishkhan2');
+
+Route::get('/user',[User::class,'index'])->name('user');
 
 
 

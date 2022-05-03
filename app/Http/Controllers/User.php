@@ -4,13 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\User;
-
-use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Support\Facades\Hash;
-
-class RegisterController extends Controller
+class User extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +13,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-      return view('register');
+        return view('user');
     }
 
     /**
@@ -40,22 +34,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|',
-            'password' => 'required|min:8|',
-            
-        ]);
-
-   
-
-        User::create([
-            'name' => $request->name,
-            'email' => $request->username,
-            'password' => Hash::make($request->password),
-        ]);
-
-        return redirect('login');
+        //
     }
 
     /**

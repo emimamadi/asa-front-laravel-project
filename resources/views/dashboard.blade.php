@@ -11,7 +11,7 @@
 
     
 
-    <title>راد </title>
+    <title>ایکس </title>
 </head>
 
 <body>
