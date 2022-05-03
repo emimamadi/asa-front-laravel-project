@@ -37,7 +37,8 @@
                 <div class="row">
                     <div class="col">
 
-                        <input type="text" class="form-control" name="name" placeholder="اسم">
+                        <input type="text" class="form-control " name="name" placeholder="اسم">
+
                     </div>
 
                 </div>
@@ -45,13 +46,14 @@
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="email" placeholder="ایمیل">
+
                     </div>
                     <div class="col">
                         <input type="password" class="form-control" name="password" placeholder="پسورد">
                     </div>
-
                 </div>
                 <br>
+
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="mobile" placeholder="موبایل">
@@ -70,22 +72,31 @@
                 </div>
                 <br>
                 <div class="row" style="text-align: center;">
-                    
+
                     <div class="col ">
-                        
+
                         <a href="{{route('login')}}">ورود</a>
                     </div>
                 </div>
-                
-                
+
+
                 <br>
                 <br>
             </form>
+       
         </div>
 
     </div>
 
-
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 
 
 

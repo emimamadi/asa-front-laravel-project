@@ -20,13 +20,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
+
+// Route::get('', function () {
 //     return view('home');
 // });
 
 
+// Route::get('/',[Home::class,'index'])->name('');
 
-Route::get('/home',[Home::class,'index'])->name('home');
+Route::get('/',[Home::class,'index'])->name('home');
 
 Route::get('/dashboard',[Dashboard::class,'index'])->name('dashboard');
 
