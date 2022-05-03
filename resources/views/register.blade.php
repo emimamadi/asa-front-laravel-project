@@ -30,7 +30,8 @@
 
         </div>
         <div class="login-right">
-            <form action="{{route('login.store')}}" method="POST">
+
+            <form action="{{route('register.store')}}" method="POST">
                 @csrf
 
                 <div class="row">
@@ -46,7 +47,7 @@
                         <input type="text" class="form-control" name="email" placeholder="ایمیل">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" name="password" placeholder="پسورد">
+                        <input type="password" class="form-control" name="password" placeholder="پسورد">
                     </div>
 
                 </div>
@@ -64,19 +65,19 @@
                 <div class="row" style="text-align: center;">
                     <div class="col ">
 
-                        <button class="btn btn-primary w-75 " type="submit">ثبت نام</button>
+                        <input class="btn btn-primary w-75 " type="submit" value="ثبت نام">
                     </div>
                 </div>
                 <br>
                 <div class="row" style="text-align: center;">
-
+                    
                     <div class="col ">
-
+                        
                         <a href="{{route('login')}}">ورود</a>
                     </div>
                 </div>
-
-
+                
+                
                 <br>
                 <br>
             </form>

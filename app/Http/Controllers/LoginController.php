@@ -37,18 +37,50 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'email' => 'required|',
-            'password' => 'required|',
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
-
-        $credentials = $request->only('email', 'password');
-
+ 
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
             return redirect()->intended('dashboard');
         }
 
-        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect("login")->withSuccess('Login details are not valid');
+
+
+        // $request->validate([
+        //     'email' => 'required',
+        //     'password' => 'required',
+        // ]);
+   
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::attempt($credentials)) {
+        //     return redirect()->intended('dashboard')
+        //                 ->withSuccess('Signed in');
+        // }
+  
+        // return redirect("login")->withSuccess('Login details are not valid');
+
+
+
+        // dd($request->email);
+        // dd($request->password);
+        // $request->validate([
+        //     'email' => 'required|string|email',
+        //     'password' => 'required|string',
+        // ]);
+
+        // $credentials = $request->only('email', 'password');
+
+        // if (Auth::attempt($credentials)) {
+        //     return redirect()->intended('dashboard');
+        // }
+
+        // return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
     /**

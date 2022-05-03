@@ -19,7 +19,7 @@ class RegisterController extends Controller
      */
     public function index()
     {
-      return view('register');
+        return view('register');
     }
 
     /**
@@ -40,20 +40,34 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd($request->address);
         $request->validate([
             'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255|',
-            'password' => 'required|min:8|',
-            
+            'email' => 'required|string|max:255|',
+            'password' => 'required|min:4|',
+            'mobile' => 'required',
+            'address' => 'required',
+
         ]);
 
-   
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->username,
-            'password' => Hash::make($request->password),
-        ]);
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->mobile = $request->mobile;
+        $user->address = $request->address;
+        $user->save();
+
+        // User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        //     'mobile' => $request->mobile,
+        //     'address' => $request->address
+
+        // ]);
 
         return redirect('login');
     }

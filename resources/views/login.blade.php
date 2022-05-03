@@ -17,7 +17,8 @@
             <img src="{{asset('asset/img/poni.jpg')}}" alt="">
 
             <div class="logform">
-                <form action="" dir="rtl">
+                <form action="{{route('login.store')}}" method="POST" dir="rtl" >
+                @csrf
                     <div class="row">
                         <div class="col">
                            
@@ -28,13 +29,13 @@
                     <div class="row">
                         <div class="col">
                  
-                            <input type="text" class="form-control" name="password" id="password" placeholder="پسورد">
+                            <input type="password" class="form-control" name="password" id="password" placeholder="پسورد">
                         </div>
                     </div>
                     <br>
                     <div class="row text-center">
                         <div class="col">
-                            <button type="submit" class="btn btn-primary w-100">ورود</button>
+                            <input type="submit" class="btn btn-primary w-100" value="ورود">
                         </div>
                     </div>
 
