@@ -81,10 +81,12 @@ class User extends Controller
         $data['name']= $request->name;
         $data['email']= $request->email;
         $data['password']= Hash::make($request->password);
-        $data['email']= $request->mobile;
+        $data['mobile']= $request->mobile;
         $data['address']= $request->address;
 
-         DB::table('user')->where('id',$id)->update($data);
+     
+
+         DB::table('users')->where('id',$id)->update($data);
 
         //  return redirect()->route('user');
 
@@ -109,6 +111,7 @@ class User extends Controller
 
         // User->update($request->all());
 
+        return redirect("user")->withSuccess('Update is done.');
         // return redirect()->with('status','Student Updated Successfully');
     }
 

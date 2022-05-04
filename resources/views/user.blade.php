@@ -18,35 +18,35 @@ use Illuminate\Support\Facades\Auth;
     <div class="row">
       <div class="col-md-2"><label for="name">نام کامل</label></div>
       <div class="col-md-6">
-        <input type="text" class="form-control " name="name" id="name" placeholder="{{Auth::user()->name}}" >
+        <input type="text" class="form-control " name="name" id="name" value="{{Auth::user()->name}}" >
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-2"><label for="email">ایمیل</label></div>
       <div class="col-md-6">
-        <input type="text" class="form-control " name="email" id="email" placeholder="{{Auth::user()->email}}">
+        <input type="text" class="form-control " name="email" id="email" value="{{Auth::user()->email}}">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-2"><label for="password">پسورد</label></div>
       <div class="col-md-6">
-        <input type="password" class="form-control " name="password" id="password" placeholder="">
+        <input type="password" class="form-control " name="password" id="password" value="substr("{{Auth::user()->password}}", 0, 8)">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-2"><label for="mobile">موبایل</label></div>
       <div class="col-md-6">
-        <input type="text" class="form-control " name="mobile" id="mobile" placeholder="{{Auth::user()->mobile}}">
+        <input type="text" class="form-control " name="mobile" id="mobile" value="{{Auth::user()->mobile}}">
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-2"><label for="address">آدرس</label></div>
       <div class="col-md-6">
-        <input type="text" class="form-control " name="address" id="address" placeholder="{{Auth::user()->address}}">
+        <input type="text" class="form-control " name="address" id="address" value="{{Auth::user()->address}}">
       </div>
     </div>
     <br>

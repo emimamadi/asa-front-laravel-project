@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Auth;
 
 @endphp
 
-<div class="sidebar">
+<div class="sidebar" >
     <div class="img">
        @if(empty(auth::user()->img))
            <img src="{{ asset('asset/img/poni.jpg') }}" alt="" width="100px" height="100px">
@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
     </div>
     <h6 style="text-align: center;color: white;padding-top: 2rem;">@php
         if(auth::user()){
-        echo auth::user()->name ." سلام ";
+        echo " سلام  ".auth::user()->name;
         }
         @endphp
     </h6>
