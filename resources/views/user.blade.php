@@ -2,9 +2,67 @@
 
 @section('content')
 
+@php
+use Illuminate\Support\Facades\Auth;
+@endphp
 
-<h3 class="mx-auto">صفحه  کاربر </h3>
-<table class="table align-middle mb-0 bg-white">
+
+<h3 class="mx-auto">صفحه کاربر </h3>
+<div class="formbox w-50 mt-3 mx-auto" dir="rtl">
+  <form action="{{ route('user.update',Auth::user()->id) }}" method="POST" style="width: 100%;">
+
+
+    @csrf
+    @method('PUT')
+
+    <div class="row">
+      <div class="col-md-2"><label for="name">نام کامل</label></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control " name="name" id="name" placeholder="{{Auth::user()->name}}" >
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><label for="email">ایمیل</label></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control " name="email" id="email" placeholder="{{Auth::user()->email}}">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><label for="password">پسورد</label></div>
+      <div class="col-md-6">
+        <input type="password" class="form-control " name="password" id="password" placeholder="">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><label for="mobile">موبایل</label></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control " name="mobile" id="mobile" placeholder="{{Auth::user()->mobile}}">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-2"><label for="address">آدرس</label></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control " name="address" id="address" placeholder="{{Auth::user()->address}}">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+
+      <div class="col-md-8 ">
+
+        <input type="submit" class="btn btn-primary w-75" name="" id="" value="بازبینی">
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+<!-- <table class="table align-middle mb-0 bg-white">
   <thead class="bg-light">
     <tr>
       <th>نام</th>
@@ -91,6 +149,6 @@
     </tr>
  
   </tbody>
-</table>
+</table> -->
 
 @stop

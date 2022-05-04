@@ -4,6 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
+
+use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Support\Facades\Auth;
+
 class User extends Controller
 {
     /**
@@ -68,7 +75,41 @@ class User extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->input());
+        $data=array();
+        
+        $data['name']= $request->name;
+        $data['email']= $request->email;
+        $data['password']= Hash::make($request->password);
+        $data['email']= $request->mobile;
+        $data['address']= $request->address;
+
+         DB::table('user')->where('id',$id)->update($data);
+
+        //  return redirect()->route('user');
+
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required|string|max:255|',
+        //     'password' => 'required|min:4|',
+        //     'mobile' => 'required',
+        //     'address' => 'required',
+
+        // ]);
+
+        // $user = new User();
+
+        // $user->id = $request->id;
+        // $user->name = $request->name;
+        // $user->email = $request->email;
+        // $user->password = Hash::make($request->password);
+        // $user->mobile = $request->mobile;
+        // $user->address = $request->address;
+        // $user->save();
+
+        // User->update($request->all());
+
+        // return redirect()->with('status','Student Updated Successfully');
     }
 
     /**

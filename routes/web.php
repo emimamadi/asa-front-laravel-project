@@ -49,5 +49,8 @@ Route::get('/pishkhan2',[Status::class,'index'])->name('pishkhan2');
 Route::get('/user',[User::class,'index'])->name('user');
 
 
+Route::put('/user/update/{id}',[User::class,'update'])->name('user.update');
+
+
 
 
