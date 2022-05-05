@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 
 <h3 class="mx-auto">صفحه کاربر </h3>
-<div class="formbox w-50 mt-3 mx-auto" dir="rtl">
+<div class="2forms mx-auto " style="display: flex; flex-direction: row-reverse; width: 80%;">
+<div class="formbox mt-3 w-100 " dir="rtl" >
   <form action="{{ route('user.update',Auth::user()->id) }}" method="POST" style="width: 100%;">
 
 
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
     <div class="row">
       <div class="col-md-2"><label for="name">نام کامل</label></div>
       <div class="col-md-6">
-        <input type="text" class="form-control " name="name" id="name" value="{{Auth::user()->name}}" >
+        <input type="text" class="form-control " name="name" id="name" value="{{Auth::user()->name}}">
       </div>
     </div>
     <br>
@@ -32,7 +33,7 @@ use Illuminate\Support\Facades\Auth;
     <div class="row">
       <div class="col-md-2"><label for="password">پسورد</label></div>
       <div class="col-md-6">
-        <input type="password" class="form-control " name="password" id="password" value="substr("{{Auth::user()->password}}", 0, 8)">
+        <input type="password" class="form-control " name="password" id="password" value="substr(" {{Auth::user()->password}}", 0, 8)">
       </div>
     </div>
     <br>
@@ -60,6 +61,29 @@ use Illuminate\Support\Facades\Auth;
 
   </form>
 </div>
+
+
+
+
+<div class="formbox  mt-3" dir="rtl" style="width: 85%;">
+  <form action="{{ route('user.adder',Auth::user()->id) }}" method="POST" style="width: 100%;">
+
+
+    @csrf
+    @method('PUT')
+
+    <div class="row">
+      <div class="col-md-6"><label for="name">موجودی حساب</label></div>
+      <div class="col-md-6">
+        <input type="text" class="form-control " name="vault" id="name" value="{{Auth::user()->vault}}" style="margin-bottom: 2%;">
+        <input type="submit" class="btn btn-primary w-100" name="submit" id="" value="اضافه کردن">
+      </div>
+    </div>
+  </form>
+</div>
+
+</div>
+
 
 
 <!-- <table class="table align-middle mb-0 bg-white">

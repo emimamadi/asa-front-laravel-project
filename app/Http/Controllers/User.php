@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User as ModelsUser;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+
+
 
 
 use Illuminate\Support\Facades\Hash;
@@ -76,17 +79,17 @@ class User extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->input());
-        $data=array();
-        
-        $data['name']= $request->name;
-        $data['email']= $request->email;
-        $data['password']= Hash::make($request->password);
-        $data['mobile']= $request->mobile;
-        $data['address']= $request->address;
+        $data = array();
 
-     
+        $data['name'] = $request->name;
+        $data['email'] = $request->email;
+        $data['password'] = Hash::make($request->password);
+        $data['mobile'] = $request->mobile;
+        $data['address'] = $request->address;
 
-         DB::table('users')->where('id',$id)->update($data);
+
+
+        DB::table('users')->where('id', $id)->update($data);
 
         //  return redirect()->route('user');
 
@@ -124,5 +127,24 @@ class User extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function adder(Request $request, $id)
+    {
+        
+
+        $user = ModelsUser::find($id);
+
+
+        $user->vault += $request->vault ;
+
+        $user->save();
+
+        return redirect("user")->withSuccess('Update is done.');
+
+       
+    }
+    public function subtractor()
+    {
     }
 }

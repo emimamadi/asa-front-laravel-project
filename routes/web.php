@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Status;
 use App\Http\Controllers\User;
@@ -51,6 +52,16 @@ Route::get('/user',[User::class,'index'])->name('user');
 
 Route::put('/user/update/{id}',[User::class,'update'])->name('user.update');
 
+Route::put('/user/adder/{id}',[User::class,'adder'])->name('user.adder');
 
 
+///***********************products*******************************/////////////////////////////////
+
+
+
+Route::get('/product', [ProductController::class, 'index']);  
+Route::get('cart', [ProductController::class, 'cart'])->name('cart');
+Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
+Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
+Route::delete('remove-from-cart', [ProductController::class, 'remove'])->name('remove.from.cart');
 
