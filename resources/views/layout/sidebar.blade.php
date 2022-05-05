@@ -5,17 +5,21 @@ use Illuminate\Support\Facades\Auth;
 
 <div class="sidebar" >
     <div class="img">
+        
        @if(empty(auth::user()->img))
-           <img src="{{ asset('asset/img/poni.jpg') }}" alt="" width="100px" height="100px">
+       <a href="{{route('user')}}">
+       <img src="{{ asset('asset/img/poni.jpg') }}" alt="" width="100px" height="100px" style="border-radius: 50px;">
+       </a>
         
        @endif
        
     </div>
-    <h6 style="text-align: center;color: white;padding-top: 2rem;">@php
-        if(auth::user()){
-        echo " سلام  ".auth::user()->name;
-        }
-        @endphp
+    <h6 style="text-align: center;color: white;padding-top: 2rem;">
+    
+        @if(auth::user())
+        <span>{{auth::user()->name}} سلام </span>
+        @endif
+      
     </h6>
     <div class="menu_sidebar">
         <ul>
@@ -25,7 +29,7 @@ use Illuminate\Support\Facades\Auth;
 
             <!-- <li><a href="">وضعیت</a></li> -->
 
-            <li><a href="{{route('user')}}">کاربر</a></li>
+            <!-- <li><a href="{{route('user')}}">کاربر</a></li> -->
 
             <li><a href="">سایر موارد</a></li>
 

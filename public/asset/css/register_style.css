@@ -29,6 +29,7 @@ body {
     padding-top: 1rem;
     display: flex;
     margin: 5rem auto;
+
 }
 
 .login-right {
@@ -36,9 +37,10 @@ body {
     border-radius: 0 2rem 2rem 0;
     display: flex;
     direction: rtl;
-    width: 50rem;
-    height: 23rem;
+    width: 49%;
+    /* height: 23rem; */
     padding-left: 1rem;
+    
 }
 
 .login-right > form {
@@ -55,15 +57,17 @@ body {
 .login-left {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 49%;
     padding-bottom: 1rem;
     /* border: 1px solid white; */
     border-radius: 2rem 0 0 2rem;
     /* position: relative;
     justify-items: center; */
+    /* height: auto; */
+    float: left;
 }
 
-.login-left > .background {
+.login-left  {
     background: rgb(95, 72, 111);
     background: linear-gradient(
         90deg,
@@ -78,17 +82,22 @@ body {
     padding-top: 5rem;
 }
 
-.background > img {
+.login-left > img {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
     margin: 0 auto;
 }
 
-.background > h5 {
+.login-left > h5 {
     padding-top: 1rem;
 }
 
-.background > p {
+.login-left > p {
     padding-top: 1rem;
+}
+
+
+form> .row{
+    margin-top: 2%;
 }

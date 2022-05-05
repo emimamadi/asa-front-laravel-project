@@ -19,16 +19,17 @@
 
 
     <div class="fullbox ">
-        <div class=" login-left text-white">
-            <div class="background"><img src="{{asset('asset/img/poni.jpg')}}" alt="">
+        <div class="login-left  text-white" >
+            <img src="{{asset('asset/img/poni.jpg')}}" alt="">
 
-                <h6 style="text-align: center;" class="pt-4">ثبت نام</h6>
+            <h6 style="text-align: center;" class="pt-4">ثبت نام</h6>
 
-                <a href="{{route('home')}}" class="text-white"><i class="fa fa-arrow-left" aria-hidden="true"></i> بازگشت به سایت </a>
-            </div>
+            <a href="{{route('home')}}" class="text-white"><i class="fa fa-arrow-left" aria-hidden="true"></i> بازگشت به سایت </a>
+
 
 
         </div>
+
         <div class="login-right">
 
             <form action="{{route('register.store')}}" method="POST">
@@ -39,38 +40,51 @@
 
                         <input type="text" class="form-control " name="name" placeholder="اسم">
 
+                        
                     </div>
-
+                    
                 </div>
-                <br>
+                @error('name')
+                <span class="error" style="position: relative;">{{ $message }}</span>
+                @enderror
+                
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="email" placeholder="ایمیل">
+                        @error('email')
+                        <span class="error" style="position: relative;">{{ $message }}</span>
+                        @enderror
 
                     </div>
                     <div class="col">
                         <input type="password" class="form-control" name="password" placeholder="پسورد">
+                        @error('password')
+                        <span class="error" style="position: relative;">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
-                <br>
+               
 
                 <div class="row">
                     <div class="col">
                         <input type="text" class="form-control" name="mobile" placeholder="موبایل">
+                        <!-- @error('mobile')
+                        <span class="error" style="position: relative;">{{ $message }}</span>
+                        @enderror -->
 
                     </div>
                     <div class="col">
                         <input type="text" class="form-control" name="address" placeholder="آدرس">
                     </div>
                 </div>
-                <br>
+               
                 <div class="row" style="text-align: center;">
                     <div class="col ">
 
                         <input class="btn btn-primary w-75 " type="submit" value="ثبت نام">
                     </div>
                 </div>
-                <br>
+              
                 <div class="row" style="text-align: center;">
 
                     <div class="col ">
@@ -83,20 +97,12 @@
                 <br>
                 <br>
             </form>
-       
+
         </div>
 
     </div>
 
-    @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+
 
 
 

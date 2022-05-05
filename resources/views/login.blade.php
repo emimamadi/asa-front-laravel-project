@@ -17,21 +17,28 @@
             <img src="{{asset('asset/img/poni.jpg')}}" alt="">
 
             <div class="logform">
-                <form action="{{route('login.store')}}" method="POST" dir="rtl" >
-                @csrf
+                <form action="{{route('login.store')}}" method="POST" dir="rtl">
+                    @csrf
                     <div class="row">
                         <div class="col">
-                           
+
                             <input type="text" class="form-control" name="email" id="email" placeholder="ایمیل">
                         </div>
+
                     </div>
+                    @error('email')
+                    <span class="error" style="position: relative;">{{ $message }}</span>
+                    @enderror
                     <br>
                     <div class="row">
                         <div class="col">
-                 
+
                             <input type="password" class="form-control" name="password" id="password" placeholder="پسورد">
                         </div>
                     </div>
+                    @error('password')
+                    <span class="error" style="position: relative;">{{ $message }}</span>
+                    @enderror
                     <br>
                     <div class="row text-center">
                         <div class="col">
