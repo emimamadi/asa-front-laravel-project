@@ -48,7 +48,7 @@ class ProductController extends Controller
         }
           
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'محصول با موفقیت اضافه شد');
     }
   
     /**
@@ -62,7 +62,7 @@ class ProductController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cart updated successfully');
+            session()->flash('success', 'کارت با موفقیت بروز شد');
         }
     }
   
@@ -79,7 +79,7 @@ class ProductController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'Product removed successfully');
+            session()->flash('success', 'محصول با موفقیت حذف شد');
         }
     }
 
