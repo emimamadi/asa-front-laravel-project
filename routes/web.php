@@ -10,6 +10,8 @@ use App\Http\Controllers\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
+// use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +61,6 @@ Route::put('/user/adder/{id}',[User::class,'adder'])->name('user.adder');
 
 
 
-Route::get('/product', [ProductController::class, 'index']);  
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
 Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');

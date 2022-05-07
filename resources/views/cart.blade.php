@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout.layout')
   
 @section('content')
 <table id="cart" class="table table-hover table-condensed">
@@ -60,7 +60,7 @@
         var ele = $(this);
   
         $.ajax({
-            url: '{{ route('update.cart') }}',
+            url: "update-cart",
             method: "patch",
             data: {
                 _token: '{{ csrf_token() }}', 
@@ -80,7 +80,7 @@
   
         if(confirm("Are you sure want to remove?")) {
             $.ajax({
-                url: '{{ route('remove.from.cart') }}',
+                url: "remove-from-cart",
                 method: "DELETE",
                 data: {
                     _token: '{{ csrf_token() }}', 

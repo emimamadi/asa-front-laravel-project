@@ -6,15 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 
+use Illuminate\Support\Facades\Auth;
+
 class ProductController extends Controller
 {
 
-   public function index()
+    public function __construct()
     {
-        $products = Product::all();
-        return view('products', compact('products'));
+        $this->middleware('Auth');
     }
-  
     /**
      * Write code on Method
      *
