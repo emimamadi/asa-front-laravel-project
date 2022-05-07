@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function __construct()
     {
-        $this->middleware('Auth');
+        $this->middleware('auth');
     }
     /**
      * Write code on Method

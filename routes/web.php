@@ -10,7 +10,7 @@ use App\Http\Controllers\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
-// use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
